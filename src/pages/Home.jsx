@@ -1,9 +1,86 @@
-import Navbar from '@/components/Navbar'
-import { Button } from '@/components/ui/button'
-import React from 'react'
+import React, {useState} from 'react'
 import { motion } from 'framer-motion'
+import Navbar from '@/components/Navbar'
+import Product from '@/components/Product'
+import one from '../assets/products/desktop.webp'
+import two from '../assets/products/desktop2.webp'
+import three from '../assets/products/desktop3.webp'
+import four from '../assets/products/desktop4.webp'
+import five from '../assets/products/desktop5.webp'
+import six from '../assets/products/desktop6.webp'
+
+import { Button } from '@/components/ui/button'
+
+
+const products = [
+  {
+    id: 1,
+    image1: one,
+    image2: '/src/assests/products/desktop.webp',
+
+    name: 'Dell UltraSharp 39.7" 2160p HDR 120 Hz Curved Thunderbolt Hub Monitor',
+    description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
+    tag: '#DEU3824DW • MFR #U3824DW',
+    price: '$1,829.99'
+  },
+  {
+    id: 2,
+    image1: two,
+    image2: '/src/assests/products/desktop.webp',
+
+    name: 'Dell UltraSharp 38" 1600p Curved Monitor',
+    description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
+    tag: '#DEU3824DW • MFR #U3824DW',
+    price: '$1041.73'
+  },
+  {
+    id: 3,
+    image1: three,
+    image2: '/src/assests/products/desktop.webp',
+
+    name: 'Apple 24" iMac with M3 Chip (Silver)',
+    description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
+    tag: '#DEU3824DW • MFR #U3824DW',
+    price: '$2,299.00'
+  },
+  {
+    id: 4,
+    image1: four,
+    image2: '/src/assests/products/desktop.webp',
+
+    name: 'Apple Mac mini (M2 Pro)',
+    description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
+    tag: '#DEU3824DW • MFR #U3824DW',
+    price: '$1,499.00'
+  },
+  {
+    id: 5,
+    image1: five,
+    image2: '/src/assests/products/desktop.webp',
+
+    name: 'SanDisk 4TB Extreme Portable SSD V2 (Black)',
+    description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
+    tag: '#DEU3824DW • MFR #U3824DW',
+    price: '$299.99'
+  },
+  {
+    id: 6,
+    image1: six,
+    image2: '/src/assests/products/desktop.webp',
+
+    name: 'Apple 16" MacBook Pro (M3 Pro, Space Black)',
+    description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
+    tag: '#DEU3824DW • MFR #U3824DW',
+    price: '$2,499.00'
+  }
+]
 
 const Home = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+  };
   return (
     <div>
       <Navbar/>
@@ -17,6 +94,18 @@ const Home = () => {
 
       </div>
       </header>
+      <main className='flex flex-col items-start justify-start gap-2 py-2 px-3'>
+        <h2 className="text-foreground font-bold text-2xl">Editor’s Pick</h2>
+        <p className='text-border text-sm font-normal'>Get the latest tech products at CRAZY discount prices.</p>
+      <div className="">
+      <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:w-[400px] md:justify-between md:items-center flex-wrap">
+        {products.map((product) => (
+          <Product key={product.id} product={product} onClick={handleProductClick} />
+        ))}
+      </div>
+      {selectedProduct && <ProductDetails product={selectedProduct} />}
+    </div>
+      </main>
     </div>
   )
 }

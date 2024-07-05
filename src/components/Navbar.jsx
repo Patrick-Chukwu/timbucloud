@@ -27,18 +27,18 @@ const Navbar = () => {
 
             </div>
             <div className="hidden text-[16px] font-semibold t  md:ml-6 lg:flex md:space-x-8 lg:justify-center lg:items-center lg:gap-2 flex-shrink-1">
-            <Link to='/' className='hover:text-background'>Mac </Link>
-        <Link to='/' className='hover:text-background'>Laptops</Link>
-          <Link to='/' className='hover:text-background'>Ipads & Tablets</Link>
-         <Link to='/' className='hover:text-background'>Desktops & Workstations</Link>
-         <Link to='/' className='hover:text-background'>Accessories</Link>
+            <Link to='/' className='hover:text-background hover:bg-foreground px-2 rounded-sm'>Mac </Link>
+        <Link to='/' className='hover:text-background hover:bg-foreground px-2 rounded-sm'>Laptops</Link>
+          <Link to='/' className='hover:text-background hover:bg-foreground px-2 rounded-sm'>Ipads & Tablets</Link>
+         <Link to='/' className='hover:text-background hover:bg-foreground px-2 rounded-sm'>Desktops & Workstations</Link>
+         <Link to='/' className='hover:text-background hover:bg-foreground px-2 rounded-sm'>Accessories</Link>
 
             </div>
             <ul className="text-xl font-semibold hidden nav-links lg:flex lg:justify-center  lg:items-center lg:gap-4">
 
        <div className='text-black relative size-6 text-center'> <Search className='size-4'/></div>
        {/* <input type="search" name="search" className='bg-white  w-16  relative ' id="" />  */}
-       <Link to='/checkout' className='text-foreground hover:text-background size-8'><ShoppingCart className='size-6'/></Link>
+       <Link to='/checkout' className='text-foreground hover:text-background size-8 hover:bg-foreground place-items-center'><ShoppingCart className='size-6'/></Link>
      </ul>
           </div>
           <div className="-mr-2 flex lg:hidden">

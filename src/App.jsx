@@ -1,9 +1,16 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Checkout from './pages/Checkout'
 
 const App = () => {
   return (
     <div className='text-foreground'>
-      App
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/checkout' element={<Checkout/>} />
+
+      </Routes>
     </div>
   )
 }

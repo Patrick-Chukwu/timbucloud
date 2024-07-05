@@ -71,9 +71,9 @@ const Navbar = () => {
         <Link to='/' onClick={closeMenu} className='hover:text-background'>Ipads & Tablets </Link>
         <Link to='/' onClick={closeMenu} className='hover:text-background'>Desktops & Workstations </Link>
         <Link to='/' onClick={closeMenu} className='hover:text-background'>Accessories </Link>
-        <ul className="text-xl font-semibold  nav-links lg:flex lg:justify-center  lg:items-center lg:gap-4">
-       <Link to='/' className='text-black size-8 hover:text-background'> <Search/></Link>
-       <Link to='/checkout' className='text-foreground size-8 hover:text-background'><ShoppingCart/></Link>
+        <ul className="font-semibold  nav-links flex flex-col justify-center  items-left text-[16px] gap-2">
+       <Link to='/' className='text-black size-4 hover:text-background'> <Search className='size-4'/></Link>
+       <Link to='/checkout' className='text-foreground hover:text-background size-6'><ShoppingCart/></Link>
      </ul>
 
         </div>

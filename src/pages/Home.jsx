@@ -94,7 +94,7 @@ const Home = () => {
 
       </div>
       </header>
-      <main className='flex flex-col items-center justify-start gap-2 py-2 px-2 md:px-6 mx-auto md:w-[95%]'>
+      <main className='flex flex-col items-center justify-start gap-2 py-2 px-3 md:px-6 mx-auto md:w-[95%]'>
        <div className="flex flex-col gap-2 self-start items-start justify-center">
        <h2 className="text-foreground font-bold text-2xl">Editor’s Pick</h2>
        <p className='text-border text-sm font-normal'>Get the latest tech products at CRAZY discount prices.</p>

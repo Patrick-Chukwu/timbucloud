@@ -36,9 +36,9 @@ const Navbar = () => {
             </div>
             <ul className="text-xl font-semibold hidden nav-links lg:flex lg:justify-center  lg:items-center lg:gap-4">
 
-       <div className='text-black relative'> <Search className='size-4'/></div>
+       <div className='text-black relative size-6 text-center'> <Search className='size-4'/></div>
        {/* <input type="search" name="search" className='bg-white  w-16  relative ' id="" />  */}
-       <Link to='/checkout' className='text-foreground hover:text-background'><ShoppingCart className='size-6'/></Link>
+       <Link to='/checkout' className='text-foreground hover:text-background size-8'><ShoppingCart className='size-6'/></Link>
      </ul>
           </div>
           <div className="-mr-2 flex lg:hidden">
@@ -65,15 +65,16 @@ const Navbar = () => {
       </div>
 
       <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden`} id="mobile-menu">
-        <div className="h-screen px-5 pt-2 mt--6 pb-60 space-y-1 flex flex-col gap-2 text-[16px] font-semibold text-foreground">
-        <Link to='/' onClick={closeMenu} className='hover:text-background'>Mac </Link>
-        <Link to='/' onClick={closeMenu} className='hover:text-background'>Laptops </Link>
-        <Link to='/' onClick={closeMenu} className='hover:text-background'>Ipads & Tablets </Link>
-        <Link to='/' onClick={closeMenu} className='hover:text-background'>Desktops & Workstations </Link>
-        <Link to='/' onClick={closeMenu} className='hover:text-background'>Accessories </Link>
-        <ul className="font-semibold  nav-links flex flex-col justify-center  items-left text-[16px] gap-2">
-       <Link to='/' className='text-black size-4 hover:text-background'> <Search className='size-4'/></Link>
-       <Link to='/checkout' className='text-foreground hover:text-background size-6'><ShoppingCart/></Link>
+        <div className="h-screen px-5 pt-12 mt--6 pb-60 space-y-1 flex flex-col justify-start gap-2 text-[16px] font-semibold text-foreground">
+        <Link to='/' onClick={closeMenu} className='hover:text-background active:bg-foreground hover:bg-foreground px-2 '>Home </Link>
+        <Link to='/' onClick={closeMenu} className='active:bg-foreground hover:text-background  hover:bg-foreground px-2'>Mac </Link>
+        <Link to='/' onClick={closeMenu} className='active:bg-foreground hover:text-background  hover:bg-foreground px-2'>Laptops </Link>
+        <Link to='/' onClick={closeMenu} className='active:bg-foreground hover:text-background  hover:bg-foreground px-2'>Ipads & Tablets </Link>
+        <Link to='/' onClick={closeMenu} className='hover:text-background  hover:bg-foreground active:bg-foreground px-2'>Desktops & Workstations </Link>
+        <Link to='/' onClick={closeMenu} className='hover:text-background  hover:bg-foreground active:bg-foreground px-2'>Accessories </Link>
+        <ul className="font-semibold  nav-links flex  justify-start  items-start text-[16px] gap-4 p-2 mt-4 border-t">
+       <Link to='/' className='text-black hover:text-background size-6 text-left'> <Search className='size-4'/></Link>
+       <Link to='/checkout' className='text-foreground hover:text-background size-8 text-center'><ShoppingCart className='size-6'/></Link>
      </ul>
 
         </div>

@@ -8,6 +8,7 @@ import three from '../assets/products/desktop3.webp'
 import four from '../assets/products/desktop4.webp'
 import five from '../assets/products/desktop5.webp'
 import six from '../assets/products/desktop6.webp'
+import product from '../assets/products/desktop8.webp'
 
 import { Button } from '@/components/ui/button'
 
@@ -119,6 +120,17 @@ const Home = () => {
       </div>
 
       </div>
+      </section>
+      <section className="flex justify-center flex-col lg:flex-row items-start lg:items-start w-[95%] mx-auto my-8 gap-4">
+        <div className="flex flex-col items-start justify-start gap-2 lg:w-[48%] border">
+          <h3 className='text-4xl font-bold text-foreground mb-2'>Top Categories</h3>
+          <p className="text-border font-normal text-3xl border-b border-grey hover:text-background">Mac</p>
+          
+        </div>
+        <div className='lg:w-1/2 border'> 
+        <img src={product} alt="product image" className='w-[350px] h-[500px] rounded-[40px] object-cover'/>
+        </div>
+       
       </section>
       </main>
     </div>

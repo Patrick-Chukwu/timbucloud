@@ -11,6 +11,7 @@ import six from '../assets/products/desktop6.webp'
 import product from '../assets/products/desktop8.webp'
 
 import { Button } from '@/components/ui/button'
+import { ArrowBigRight, ArrowRight } from 'lucide-react'
 
 
 const products = [
@@ -122,13 +123,31 @@ const Home = () => {
       </div>
       </section>
       <section className="flex justify-center flex-col lg:flex-row items-start lg:items-start w-[95%] mx-auto my-8 gap-4">
-        <div className="flex flex-col items-start justify-start gap-2 lg:w-[48%] border">
+        <div className="flex flex-col items-start justify-start gap-2 lg:w-[48%] w-[90%] mx-auto">
           <h3 className='text-4xl font-bold text-foreground mb-2'>Top Categories</h3>
-          <p className="text-border font-normal text-3xl border-b border-grey hover:text-background">Mac</p>
-          
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <p className=" px-2  font-normal text-3xl  ">Mac</p>
+          <ArrowRight className=''/>
+          </div>
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <p className=" px-2  font-normal text-3xl  ">Laptop</p>
+          <ArrowRight className=''/>
+          </div>
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <p className=" px-2  font-normal text-3xl  ">Ipad & Tablets</p>
+          <ArrowRight className=''/>
+          </div>
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <p className=" px-2  font-normal text-3xl  ">Desktops & Workstations</p>
+          <ArrowRight className=''/>
+          </div>
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <p className=" px-2  font-normal text-3xl  ">Accessories</p>
+          <ArrowRight className=''/>
+          </div>
         </div>
-        <div className='lg:w-1/2 border'> 
-        <img src={product} alt="product image" className='w-[350px] h-[500px] rounded-[40px] object-cover'/>
+        <div className='md:w-[664px] lg:w-1/2 max-w-[90%] max[335px] mx-auto place-content-center place-items-center text-center'> 
+        <img src={product} alt="product image" className=' w-full  h-[500px] rounded-[40px] mx-auto object-fill place-self-center'/>
         </div>
        
       </section>

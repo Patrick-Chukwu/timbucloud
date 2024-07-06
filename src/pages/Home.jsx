@@ -135,9 +135,9 @@ const Home = () => {
       </div>
       </section>
       <section className="flex justify-center flex-col lg:flex-row items-start lg:items-start w-[95%] mx-auto my-8 gap-4">
-        <div className="flex flex-col items-start justify-center gap-4  h-[400px] lg:w-[48%] w-[90%] mx-auto py-10">
+        <div className="flex flex-col items-start justify-center gap-4  h-[400px] lg:mt-12 lg:w-[48%] w-[90%] mx-auto py-10">
           <h3 className='text-4xl font-bold text-foreground mb-2'>Top Categories</h3>
-          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-destructive hover:text-foreground">
           <p className=" px-2  font-normal text-3xl  ">Mac</p>
           <ArrowRight className=''/>
           </div>
@@ -151,7 +151,7 @@ const Home = () => {
           </div>
           <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
           <p className=" px-2  font-normal text-3xl  ">Desktops & Workstations</p>
-          <ArrowRight className=''/>
+          <ArrowRight/>
           </div>
           <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
           <p className=" px-2  font-normal text-3xl  ">Accessories</p>

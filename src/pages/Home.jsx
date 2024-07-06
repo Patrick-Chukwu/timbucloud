@@ -147,8 +147,8 @@ const Home = () => {
           <ArrowRight className=''/>
           </div>
         </div>
-        <div className='md:w-[664px] lg:w-1/2 max-w-[90%] max[335px] mx-auto place-content-center place-items-center text-center'> 
-        <img src={product} alt="product image" className=' w-full  h-[500px] rounded-[40px] mx-auto object-fill place-self-center'/>
+        <div className='md:w-[664px] lg:w-1/2 max-w-[90%] w-[335px] mx-auto place-content-center place-items-center text-center'> 
+        <img src={product} alt="product image" className=' w-full h-[500px] md:h-[500px] rounded-[40px] mx-auto object-fill place-self-center'/>
         </div>
        
       </section>

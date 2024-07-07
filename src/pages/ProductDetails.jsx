@@ -8,6 +8,7 @@ import four from '../assets/products/desktop4.webp'
 import five from '../assets/products/desktop5.webp'
 import six from '../assets/products/desktop6.webp'
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const products = [
   {
@@ -82,12 +83,17 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="">
+    
+    <div >
       <Navbar/>
-      <img src={product.image1} alt={product.name} className="" />
-      <h1 className="text-2xl font-bold">{product.name}</h1>
+<div className="w-[95%] mx-auto">
+<img src={product.image1} alt={product.name} className="" />
+      <h1 className="text-4xl text-left text-foreground font-bold md:text-5xl">{product.name}</h1>
       <p className="text-lg text-gray-700">{product.price}</p>
-      <p className="text-gray-500">{product.description}</p>
+      <p className="text-destructive text-sm  font-normal">{product.description}</p>
+
+</div>
+      <Footer/>
 
     </div>
   );

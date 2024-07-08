@@ -38,7 +38,7 @@ const Navbar = () => {
 
        <div className='text-black relative size-6 text-center'> <Search className='size-4'/></div>
        {/* <input type="search" name="search" className='bg-white  w-16  relative ' id="" />  */}
-       <Link to='/checkout' className='text-foreground hover:text-background size-8 hover:bg-foreground place-items-center'><ShoppingCart className='size-6'/></Link>
+       <Link to='/cart' className='text-foreground hover:text-background size-8 hover:bg-foreground place-items-center'><ShoppingCart className='size-6'/></Link>
      </ul>
           </div>
           <div className="-mr-2 flex lg:hidden">
@@ -74,7 +74,7 @@ const Navbar = () => {
         <Link to='/' onClick={closeMenu} className='hover:text-background  hover:bg-foreground active:bg-foreground px-2'>Accessories </Link>
         <ul className="font-semibold  nav-links flex  justify-start  items-start text-[16px] gap-4 p-2 mt-4 border-t">
        <Link to='/' className='text-black hover:text-background size-6 text-left'> <Search className='size-4'/></Link>
-       <Link to='/checkout' className='text-foreground hover:text-background size-8 text-center'><ShoppingCart className='size-6'/></Link>
+       <Link to='/cart' className='text-foreground hover:text-background size-8 text-center'><ShoppingCart className='size-6'/></Link>
      </ul>
 
         </div>

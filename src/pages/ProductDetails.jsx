@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 
 import one from '../assets/products/desktop.webp'
 import two from '../assets/products/desktop2.webp'
@@ -11,7 +11,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import one1 from '../assets/products/desktop10.webp'
 import one2 from '../assets/products/desktop9.webp'
-import { Star, StarHalfIcon, StarIcon, StarOff, StarsIcon } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 
@@ -80,14 +80,21 @@ const products = [
   }
 ]
 
-
 const ProductDetails = () => {
   const { productId } = useParams();
   const product = products.find((p) => p.id === parseInt(productId));
 
+
   if (!product) {
     return <div>Please select a product.</div>;
   }
+
+
+const navigate = useNavigate();
+
+const handleClick = () => {
+  navigate(`/cart`)
+}
 
   return (
     
@@ -125,7 +132,7 @@ const ProductDetails = () => {
  
   <div className="flex justify-between gap-4 w-full">
   
-  <Button className="bg-primary rounded-3xl">Add To Cart</Button>
+  <Button className="bg-primary rounded-3xl w-[335px] text-center" onClick={handleClick}>Add To Cart</Button>
   </div>
   </div>
 

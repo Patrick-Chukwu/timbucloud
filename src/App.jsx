@@ -11,6 +11,7 @@ import five from './assets/products/desktop5.webp'
 import six from './assets/products/desktop6.webp'
 import one1 from './assets/products/desktop10.webp'
 import one2 from './assets/products/desktop9.webp'
+import Cart from './pages/Cart'
 
 const App = () => {
 
@@ -84,8 +85,7 @@ const App = () => {
         <Route path='/' element={<Home/>} />
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/product/:productId' element={<ProductDetails/>} />
-
-
+        <Route path='/cart' element={<Cart/>} />
       </Routes>
     </div>
   )

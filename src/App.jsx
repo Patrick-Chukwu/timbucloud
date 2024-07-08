@@ -9,6 +9,8 @@ import three from './assets/products/desktop3.webp'
 import four from './assets/products/desktop4.webp'
 import five from './assets/products/desktop5.webp'
 import six from './assets/products/desktop6.webp'
+import one1 from './assets/products/desktop10.webp'
+import one2 from './assets/products/desktop9.webp'
 
 const App = () => {
 
@@ -16,8 +18,9 @@ const App = () => {
     {
       id: 1,
       image1: one,
-      image2: '/src/assests/products/desktop.webp',
-  
+      image2: one1,
+      image3: one2,
+
       name: 'Dell UltraSharp 39.7" 2160p HDR 120 Hz Curved Thunderbolt Hub Monitor',
       description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
       tag: '#DEU3824DW • MFR #U3824DW',

@@ -84,6 +84,7 @@ const products = [
 const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+  
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);

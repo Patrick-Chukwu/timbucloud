@@ -6,6 +6,22 @@ import { useNavigate } from 'react-router-dom';
 const Product = ({ product }) => {
   const navigate = useNavigate();
 
+  const handleAddToCart = () => {
+    console.log("a new item has been added to cart")
+    const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const existingItem = savedCartItems.find((item) => item.id === product.id);
+
+    if (existingItem) {
+      const updatedCartItems = savedCartItems.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    } else {
+      localStorage.setItem('cartItems', JSON.stringify([...savedCartItems, { ...product, quantity: 1 }]));
+    }
+    navigate('/cart');
+  };
+
   const handleClick = () => {
     navigate(`/product/${product.id}`);
   };
@@ -19,7 +35,7 @@ const Product = ({ product }) => {
       <p className="text-sm font-extrabold">{product.tag}</p>
       <div className="flex gap-2 justify-between items-center w-full">
         <p className='text-foreground text-2xl font-bold'>{product.price}</p>
-        <Button className='text-xl bg-primary font-bold rounded-3xl hover:text-background hover:bg-destructive' onClick={handleCart}>Add To Cart</Button>
+        <Button className='text-xl bg-primary font-bold rounded-3xl hover:text-background hover:bg-destructive' onClick={handleAddToCart}>Add To Cart</Button>
       </div>
     </div>
   );

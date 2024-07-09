@@ -11,7 +11,9 @@ const CartItem = ({ item, onQuantityChange, onRemove }) => {
         </div>
         <p className="text-gray-500">{item.code} • {item.mfr}</p>
         <div className="flex items-center justify-between gap-2 px-4 mt-2 bg-gray-200 max-w-[184px] rounded-3xl">
-          <button onClick={() => onQuantityChange(item.id, -1)} className=" p-2 rounded">-</button>
+          <button onClick={() => onQuantityChange(item.id, -1)}
+          disabled={item.quantity === 1}
+          className=" p-2 rounded">-</button>
           <span className="mx-2">{item.quantity}</span>
           <button onClick={() => onQuantityChange(item.id, 1)} className=" p-2 rounded">+</button>
         </div>

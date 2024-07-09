@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CartItem from '../components/CartItem';
 import OrderSummary from '../components/OrderSummary';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const initialCartItems = [
   {
@@ -44,7 +45,20 @@ const initialCartItems = [
 ];
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState(initialCartItems);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const savedCartItems = localStorage.getItem('cartItems');
+    if (savedCartItems) {
+      setCartItems(JSON.parse(savedCartItems));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const navigate = useNavigate();
 
   const handleQuantityChange = (id, amount) => {
     setCartItems((prevItems) =>
@@ -62,12 +76,23 @@ const Cart = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
+
+
+
+
   return (
     <div className="">
       <Navbar/>
       <div className="w-full mx-auto px-4 flex flex-col items-start justify-start">
       <h1 className="text-2xl font-bold my-4 mx-4">My Cart</h1>
-      <p className="mb-4">Total Items ({cartItems.length})</p>
+      {cartItems.length === 0 ? (
+        <div className="min-h-full py-24">
+           <p className="text-2xl text-center font-bold ">You don't have any item in your cart at the moment.</p>
+        </div>
+       
+      ) : (
+        <>  
+        <p className="mb-4">Total Items ({cartItems.length})</p>
       <div className="flex flex-col gap-4 justify-center items-start lg:flex-row w-full">
         <div className="flex flex-col gap-2 my-4 w-[400px] mx-auto max-w-full">
         {cartItems.map((item) => (
@@ -80,8 +105,15 @@ const Cart = () => {
       ))}
         </div>
   
-      <OrderSummary total={calculateTotal()} />
+      <OrderSummary total={calculateTotal()}
+      cta="Proceed To Payment" 
+      onButtonClick={() => navigate('/checkout')}/>
       </div>
+        </>
+      )
+
+      }
+      
       </div>
    
    

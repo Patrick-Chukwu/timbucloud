@@ -91,10 +91,22 @@ const ProductDetails = () => {
 
 
 const navigate = useNavigate();
+const handleAddToCart = () => {
+  console.log("a new item has been added to cart")
+  const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const existingItem = savedCartItems.find((item) => item.id === product.id);
 
-const handleClick = () => {
-  navigate(`/cart`)
-}
+  if (existingItem) {
+    const updatedCartItems = savedCartItems.map((item) =>
+      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  } else {
+    localStorage.setItem('cartItems', JSON.stringify([...savedCartItems, { ...product, quantity: 1 }]));
+  }
+  navigate('/cart');
+};
+
 
   return (
     
@@ -132,7 +144,7 @@ const handleClick = () => {
  
   <div className="flex justify-between gap-4 w-full">
   
-  <Button className="bg-primary rounded-3xl w-[335px] text-center" onClick={handleClick}>Add To Cart</Button>
+  <Button className="bg-primary rounded-3xl w-[335px] text-center" onClick={handleAddToCart}>Add To Cart</Button>
   </div>
   </div>
 

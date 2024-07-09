@@ -38,14 +38,13 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement order submission logic here
     alert('Order placed successfully!');
   };
 
   return (
     <div className="">
       <Navbar />
-      <div className="w-[95%] mx-auto p-4">
+      <div className="w-[98%] mx-auto p-4">
         <h1 className="text-5xl font-bold mb-4">Checkout</h1>
         <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center lg:flex-row w-full lg:items-start lg:justify-between">
           <div className="bg-white p-4 mb-4 rounded shadow-lg w-full  lg:w-[840px]  lg:h-[730px]">
@@ -210,7 +209,7 @@ const Checkout = () => {
                 </div>
              
             </div>
-            <div className="flex items-center mb-4">
+            <div className="flex justify-center items-center  my-2 w-full">
               <input
                 type="checkbox"
                 name="termsAccepted"

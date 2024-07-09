@@ -144,7 +144,7 @@ const handleAddToCart = () => {
  
   <div className="flex justify-between gap-4 w-full">
   
-  <Button className="bg-primary rounded-3xl w-[335px] text-center" onClick={handleAddToCart}>Add To Cart</Button>
+  <Button className="bg-primary rounded-3xl w-[335px] text-center py-6 text-xl font-bold" onClick={handleAddToCart}>Add To Cart</Button>
   </div>
   </div>
 

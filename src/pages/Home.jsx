@@ -172,7 +172,7 @@ useEffect(() => {
       </div>
       </section>
       <section className="flex justify-center flex-col lg:flex-row items-start lg:items-start w-[95%] mx-auto my-8 gap-4">
-        <div className="text-foreground text-[28px] md:text-4xl flex flex-col items-start justify-center gap-4  h-[400px] lg:mt-12 lg:w-[48%] w-[90%] mx-auto py-10">
+        <div className="text-foreground text-[28px] md:text-4xl flex flex-col items-start justify-center gap-4  h-[400px] w-full mx-auto py-10">
           <h3 className='text-4xl font-bold text-foreground mb-2'>Our Products</h3>
           <div className=" flex gap-4 justify-between items-center w-full border-b border-secondary  ">
           <p className=" px-2  font-normal  ">Mac</p>
@@ -190,8 +190,8 @@ useEffect(() => {
           <p className=" px-2  font-normal  ">Accessories</p>
           </div>
         </div>
-        <div className='md:min-w-[664px] lg:w-1/2 w-[95%] max-w-[400px] mx-auto place-content-center place-items-center text-center rounded-[40px] shadow-lg'> 
-        <img src={product} alt="product image" className=' w-full h-[400px] md:h-[500px] rounded-[40px] mx-auto  object-cover place-self-center'/>
+        <div className='m lg:w-full w-full mx-auto place-content-center place-items-center text-center rounded-[40px] shadow-lg'> 
+        <img src={product} alt="product image" className=' w-full h-[400px] md:h-[500px] rounded-[40px] mx-auto  object-content place-self-center'/>
         </div>
        
       </section>

@@ -93,16 +93,11 @@ body {
     background: linear-gradient(0deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0.3029586834733894) 96%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
   }
-.gradient:hover, .gradient:active {
-  opacity: .8;
-}
+
   .gradient2 {
     background: rgb(0,0,0);
     background: -moz-linear-gradient(0deg, rgba(0,0,0,0.6923144257703081) 15%, rgba(0,0,0,0.6362920168067228) 96%);
     background: -webkit-linear-gradient(0deg, rgba(0,0,0,0.6923144257703081) 15%, rgba(0,0,0,0.6362920168067228) 96%);
     background: linear-gradient(0deg, rgba(0,0,0,0.6923144257703081) 15%, rgba(0,0,0,0.6362920168067228) 96%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
-  }
-  .gradient2:hover, .gradient2:active {
-    opacity: .8;
   }

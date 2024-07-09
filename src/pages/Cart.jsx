@@ -82,10 +82,11 @@ const Cart = () => {
 
 
   return (
-    <div className="">
+    <div className="min-h-screen">
       <Navbar/>
       <div className="w-full mx-auto px-4 flex flex-col items-start justify-start">
       <h1 className="text-2xl font-bold my-4 mx-4">My Cart</h1>
+      <p className='mb-4 mx-4 text-xl font-semibold'>Total Items ({cartItems.length})</p>
       {cartItems.length === 0 ? (
         <div className="flex flex-col gap-8 items-between justify-center lg:flex-row w-full my-4">
   <div className="flex flex-col items-center justify-center gap-4 py-20 w-[95%] mx-auto max-h-[118px] lg:h-[325px] max-w-[840px">
@@ -101,7 +102,6 @@ const Cart = () => {
        
       ) : (
         <>  
-        <p className="mb-4">Total Items ({cartItems.length})</p>
       <div className="flex flex-col gap-4 justify-center items-start lg:flex-row w-full">
         <div className="flex flex-col gap-2 my-4 w-[400px] mx-auto max-w-full">
         {cartItems.map((item) => (

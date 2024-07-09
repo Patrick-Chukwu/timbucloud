@@ -173,26 +173,21 @@ useEffect(() => {
       </section>
       <section className="flex justify-center flex-col lg:flex-row items-start lg:items-start w-[95%] mx-auto my-8 gap-4">
         <div className="flex flex-col items-start justify-center gap-4  h-[400px] lg:mt-12 lg:w-[48%] w-[90%] mx-auto py-10">
-          <h3 className='text-4xl font-bold text-foreground mb-2'>Top Categories</h3>
-          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-destructive hover:text-foreground">
-          <p className=" px-2  font-normal text-3xl  ">Mac</p>
-          <ArrowRight className=''/>
+          <h3 className='text-4xl font-bold text-foreground mb-2'>Our Products</h3>
+          <div className="text-2xl md:text-4xl flex gap-4 justify-between items-center w-full border-b border-secondary  text-foreground">
+          <p className=" px-2  font-normal  ">Mac</p>
           </div>
           <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
-          <p className=" px-2  font-normal text-3xl  ">Laptop</p>
-          <ArrowRight className=''/>
+          <p className=" px-2   ">Laptop</p>
           </div>
           <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
-          <p className=" px-2  font-normal text-3xl  ">Ipad & Tablets</p>
-          <ArrowRight className=''/>
+          <p className=" px-2  font-normal  ">Ipad & Tablets</p>
           </div>
           <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
-          <p className=" px-2  font-normal text-3xl  ">Desktops & Workstations</p>
-          <ArrowRight/>
+          <p className=" px-2  font-normal  ">Desktops & Workstations</p>
           </div>
           <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
-          <p className=" px-2  font-normal text-3xl  ">Accessories</p>
-          <ArrowRight className=''/>
+          <p className=" px-2  font-normal  ">Accessories</p>
           </div>
         </div>
         <div className='md:min-w-[664px] lg:w-1/2 w-[95%] max-w-[400px] mx-auto place-content-center place-items-center text-center rounded-[40px] shadow-lg'> 

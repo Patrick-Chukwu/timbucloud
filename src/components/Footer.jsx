@@ -9,14 +9,14 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='bg-primary w-full py-4'>
-      <div className="mx-auto w-[90%]">
-      <div className="flex flex-col gap-4 py-4 w-full border-b">
+      <div className="mx-auto w-[95%]">
+      <div className="flex flex-col gap-4 py-6 w-full border-b">
         <Link to="/">    <img src={logo} alt="Timbucloud logo" className='w-[328.28px] h-7 md:w-[328.85px]'/>
         </Link>
     <p className="text-xl font-normal text-foreground w-[335px] md:w-[624px] lg:w-full max-w-[98%] ">Your one-stop tech shop. The biggest personal computing retailer in West Africa</p>
     </div>
-    <div className="flex flex-col md:flex-row items-start justify-between md:items-center font-normal text-sm text-foreground my-4 gap-4">
-      <div className="flex gap-2 items-center text-foreground ">
+    <div className="flex flex-col md:flex-row items-start justify-between md:items-center font-normal text-sm text-foreground mb-4 mt-12 gap-4">
+      <div className="flex gap-4 items-center text-foreground ">
         <img src={fb} alt="Facebook Icon" />
         <img src={x} alt="X Icon" />
         <img src={ig} alt="Instagram Icon" />

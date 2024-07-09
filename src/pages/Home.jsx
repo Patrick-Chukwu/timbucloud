@@ -127,8 +127,8 @@ useEffect(() => {
       <main>
       <section className='sectionflex flex-col items-center justify-start gap-2 py-2 px-3 md:px-6 mx-auto md:w-[95%]'>
        <div className="flex flex-col gap-2 self-start items-start justify-center">
-       <h2 className="text-foreground font-bold text-2xl">Editor’s Pick</h2>
-      <p className=' text-lg font-normal text-destructive'>From the best stores and offers</p>
+       <h2 className="text-foreground font-bold text-2xl lg:text-4xl">Editor’s Pick</h2>
+      <p className=' text-[16px] font-normal text-destructive'>From the best stores and offers</p>
        </div>
       <div className="">
       <div id='store' className=" my-8 flex flex-col items-center justify-center gap-8 md:gap-4 md:flex-row md:justify-between md:items-center flex-wrap">

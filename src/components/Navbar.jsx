@@ -25,8 +25,8 @@ const Navbar = () => {
             <div className="">
               <Link to='/'><img className='h-4 w-[189.3px] bg-primary hover:bg-background' src={logo} alt="Timbucloud logo" /></Link>
             </div>
-            <Link to='/cart' className='text-[16px] font-semibold flex justify-center items-center gap-2 w-fit text-foreground size-8 place-items-center'>
-              <img src={cart} alt="cart icon" className='hover:bg-background hover:p-2 hover:rounded-full' />
+            <Link to='/cart' className='text-[16px] font-semibold flex justify-center items-center hover:underline gap-2 w-fit text-foreground size-8 place-items-center'>
+              <img src={cart} alt="cart icon" className='' />
               <p>Cart({cartItems.length})</p>
             </Link>
           </div>

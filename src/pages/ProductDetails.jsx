@@ -1,19 +1,19 @@
 import React from 'react';
-import { useParams,useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
-import one from '../assets/products/desktop.webp'
-import two from '../assets/products/desktop2.webp'
-import three from '../assets/products/desktop3.webp'
-import four from '../assets/products/desktop4.webp'
-import five from '../assets/products/desktop5.webp'
-import six from '../assets/products/desktop6.webp'
+import one from '../assets/products/desktop.webp';
+import two from '../assets/products/desktop2.webp';
+import three from '../assets/products/desktop3.webp';
+import four from '../assets/products/desktop4.webp';
+import five from '../assets/products/desktop5.webp';
+import six from '../assets/products/desktop6.webp';
+import one1 from '../assets/products/desktop10.webp';
+import one2 from '../assets/products/desktop9.webp';
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import one1 from '../assets/products/desktop10.webp'
-import one2 from '../assets/products/desktop9.webp'
 import { Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 
 const products = [
   {
@@ -21,10 +21,9 @@ const products = [
     image1: one,
     image2: one1,
     image3: one2,
-
     name: 'Dell UltraSharp 39.7" 2160p HDR 120 Hz Curved Thunderbolt Hub Monitor',
-    description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
-    tag: '#DEU3824DW • MFR #U3824DW',
+    description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology...',
+    tag: '#DEU3824DW • MFR #U3824DW',
     price: '$1,829.99'
   },
   {
@@ -70,96 +69,84 @@ const products = [
   {
     id: 6,
     image1: six,
-    image2: 'one1',
-    image3: 'one2',
+    image2: '/src/assests/products/desktop.webp',
 
     name: 'Apple 16" MacBook Pro (M3 Pro, Space Black)',
     description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
     tag: '#DEU3824DW • MFR #U3824DW',
     price: '$2,499.00'
-  }
-]
+  }];
 
 const ProductDetails = () => {
   const { productId } = useParams();
+  const navigate = useNavigate();
   const product = products.find((p) => p.id === parseInt(productId));
-
 
   if (!product) {
     return <div>Please select a product.</div>;
   }
 
+  const handleAddToCart = () => {
+    console.log("Adding item to cart:", product.name);
+    const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const existingItem = savedCartItems.find((item) => item.id === product.id);
 
-const navigate = useNavigate();
-const handleAddToCart = () => {
-  console.log("a new item has been added to cart")
-  const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  const existingItem = savedCartItems.find((item) => item.id === product.id);
-
-  if (existingItem) {
-    const updatedCartItems = savedCartItems.map((item) =>
-      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-    );
-    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-  } else {
-    localStorage.setItem('cartItems', JSON.stringify([...savedCartItems, { ...product, quantity: 1 }]));
-  }
-  navigate('/cart');
-};
-
+    if (existingItem) {
+      const updatedCartItems = savedCartItems.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    } else {
+      localStorage.setItem('cartItems', JSON.stringify([...savedCartItems, { ...product, quantity: 1 }]));
+    }
+    console.log("Cart items:", JSON.parse(localStorage.getItem('cartItems')));
+  };
 
   return (
-    
-    <div >
-      <Navbar/>
-<div className="w-[95%] mx-auto">
-  <div className="flex gap-8 items-center justify-between my-8 flex-col lg:flex-row">
-  <div className="flex flex-col gap-4 items-center justify-center h-[516px] w-[522px] max-w-[95%] shrink">
-  <img src={product.image1} alt={product.name} className="h-[340px] w-[522px]" />
-<div className="flex justify-center items-center w-[95%] md:w-1/2 gap-4">
-<img src={product.image1} alt={product.name} className="size-[100px] md:size-40 border p-2 rounded-xl hover:border-primary" />
-<img src={product.image2} alt={product.name} className="size-[100px] md:size-40 border p-2 rounded-xl hover:border-primary" />
-<img src={product.image3} alt={product.name} className="size-[100px] md:size-40 border p-2 rounded-xl hover:border-primary" />
-
-</div>
-  </div>
-  <div className="flex flex-col gap-4 justify-start items-col w-[95%] mx-auto lg:w-1/2">
-  <h1 className="text-4xl text-left text-foreground font-bold md:text-5xl">{product.name}</h1>
-  <p className="text-destructive text-sm  font-normal">{product.description}</p>
-  <p className='font-bold text-sm underline'>Read More</p>
-  <div className="flex justify-start items-start md:items-center gap-6 text-xl text-foreground font-bold w-full flex-col md:flex-row">
-    <div className="flex justify-center items-center gap-2">
-   <>
-   <Star className='text-primary fill-primary'/>
-    <Star className='text-primary fill-primary'/>
-    <Star className='text-primary fill-primary'/>
-    <Star className='text-primary fill-primary'/>
-    <Star className='text-primary'/>
-</>
-      <p>4.0</p>
-    </div>
-    <p>12k reviews</p>
-  </div>
-  <p className="text-4xl text-foreground font-bold">{product.price}</p>
- 
-  <div className="flex justify-between gap-4 w-full">
-  
-  <Button className="bg-primary rounded-3xl w-[335px] text-center py-6 text-xl font-bold" onClick={handleAddToCart}>Add To Cart</Button>
-  </div>
-  </div>
-
-  </div>
-
-<div className="flex flex-col gap-2 items-start justify-center my-4">
-  <h3 className="font-bold text-3xl">Key Features</h3>
-  <li>Apple M3 8-Core Chip</li>
-  <li>16GB Unified RAM | 512GB SSD</li>
-  <li>13.6" 2560 x 1664 Liquid Retina Display</li>
-  <li>10-Core GPU | 16-Core Neural Engine</li>
-</div>
-</div>
-      <Footer/>
-
+    <div>
+      <Navbar />
+      <div className="w-[95%] mx-auto">
+        <div className="flex gap-8 items-center justify-between my-8 flex-col lg:flex-row">
+          <div className="flex flex-col gap-4 items-center justify-center h-[516px] w-[522px] max-w-[95%] shrink">
+            <img src={product.image1} alt={product.name} className="h-[340px] w-[522px] object-contain" />
+            <div className="flex justify-center items-center w-[95%] md:w-1/2 gap-4">
+              <img src={product.image1} alt={product.name} className="size-[100px] md:size-40 border p-2 rounded-xl hover:border-primary" />
+              <img src={product.image2} alt={product.name} className="size-[100px] md:size-40 border p-2 rounded-xl hover:border-primary" />
+              <img src={product.image3} alt={product.name} className="size-[100px] md:size-40 border p-2 rounded-xl hover:border-primary" />
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 justify-start items-col w-[95%] mx-auto lg:w-1/2">
+            <h1 className="text-4xl text-left text-foreground font-bold md:text-5xl">{product.name}</h1>
+            <p className="text-destructive text-sm font-normal">{product.description}</p>
+            <p className="font-bold text-sm underline">Read More</p>
+            <div className="flex justify-start items-start md:items-center gap-6 text-xl text-foreground font-bold w-full flex-col md:flex-row">
+              <div className="flex justify-center items-center gap-2">
+                <>
+                  <Star className='text-primary fill-primary' />
+                  <Star className='text-primary fill-primary' />
+                  <Star className='text-primary fill-primary' />
+                  <Star className='text-primary fill-primary' />
+                  <Star className='text-primary' />
+                </>
+                <p>4.0</p>
+              </div>
+              <p>12k reviews</p>
+            </div>
+            <p className="text-[28px] text-foreground font-bold">{product.price}</p>
+            <div className="flex justify-between gap-4 w-full">
+              <Button className="bg-primary rounded-3xl w-[335px] text-center py-6 text-xl font-bold hover:bg-destructive hover:text-background" onClick={handleAddToCart}>Add To Cart</Button>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2 items-start justify-center my-4">
+          <h3 className="font-bold text-3xl">Key Features</h3>
+          <li>Apple M3 8-Core Chip</li>
+          <li>16GB Unified RAM | 512GB SSD</li>
+          <li>13.6" 2560 x 1664 Liquid Retina Display</li>
+          <li>10-Core GPU | 16-Core Neural Engine</li>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

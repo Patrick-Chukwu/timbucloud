@@ -18,7 +18,7 @@ const Navbar = () => {
   }, [cartItems]);
 
   return (
-    <nav className="bg-primary w-full px-2 py-3">
+    <nav className="bg-primary w-full px-2 py-3 fixed top-0">
       <div className="flex-1 flex-wrap max-w-full flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex w-full sm:py-2">
           <div className="flex justify-between items-center w-full flex-1">

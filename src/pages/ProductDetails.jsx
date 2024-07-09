@@ -103,9 +103,9 @@ const ProductDetails = () => {
   };
 
   return (
-    <div>
+    <div className='mt-16'>
       <Navbar />
-      <div className="w-[95%] mx-auto">
+      <div className="w-[95%] mx-auto md:px-4">
         <div className="flex gap-8 items-center justify-between my-8 flex-col lg:flex-row">
           <div className="flex flex-col gap-4 items-center justify-center h-[516px] w-[522px] max-w-[95%] shrink">
             <img src={product.image1} alt={product.name} className="h-[340px] w-[522px] object-contain" />

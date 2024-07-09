@@ -42,7 +42,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="">
+    <div className="mt-16">
       <Navbar />
       <div className="w-[98%] mx-auto p-4">
         <h1 className="text-5xl font-bold mb-4">Checkout</h1>

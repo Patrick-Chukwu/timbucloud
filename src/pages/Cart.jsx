@@ -82,7 +82,7 @@ const Cart = () => {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-16">
       <Navbar/>
       <div className="w-full mx-auto px-4 flex flex-col items-start justify-start">
       <h1 className="text-2xl font-bold my-4 mx-4">My Cart</h1>

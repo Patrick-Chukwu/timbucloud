@@ -104,7 +104,7 @@ useEffect(() => {
     setSelectedProduct(product);
   };
   return (
-    <div>
+    <div className='mt-28'>
       <Navbar/>
       <header className="my-12 w-[95%] max-w-[1280px] mx-auto   bg-cover bg-center rounded-3xl " style={{backgroundImage: "url('/hero.webp')"}}>
       <div className="p-8 h-[321px] md:h-[396px] lg:h-[400px] gradient w-full rounded-3xl  my-4  flex flex-col items-start justify-end gap-2 ">

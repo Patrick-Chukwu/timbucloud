@@ -172,21 +172,21 @@ useEffect(() => {
       </div>
       </section>
       <section className="flex justify-center flex-col lg:flex-row items-start lg:items-start w-[95%] mx-auto my-8 gap-4">
-        <div className="flex flex-col items-start justify-center gap-4  h-[400px] lg:mt-12 lg:w-[48%] w-[90%] mx-auto py-10">
+        <div className="text-foreground text-[28px] md:text-4xl flex flex-col items-start justify-center gap-4  h-[400px] lg:mt-12 lg:w-[48%] w-[90%] mx-auto py-10">
           <h3 className='text-4xl font-bold text-foreground mb-2'>Our Products</h3>
-          <div className="text-2xl md:text-4xl flex gap-4 justify-between items-center w-full border-b border-secondary  text-foreground">
+          <div className=" flex gap-4 justify-between items-center w-full border-b border-secondary  ">
           <p className=" px-2  font-normal  ">Mac</p>
           </div>
-          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary">
           <p className=" px-2   ">Laptop</p>
           </div>
-          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary ">
           <p className=" px-2  font-normal  ">Ipad & Tablets</p>
           </div>
-          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary ">
           <p className=" px-2  font-normal  ">Desktops & Workstations</p>
           </div>
-          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary text-muted-foreground hover:text-foreground">
+          <div className="flex gap-4 justify-between items-center w-full border-b border-secondary">
           <p className=" px-2  font-normal  ">Accessories</p>
           </div>
         </div>

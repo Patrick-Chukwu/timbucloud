@@ -3,7 +3,8 @@ import CartItem from '../components/CartItem';
 import OrderSummary from '../components/OrderSummary';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const initialCartItems = [
   {
@@ -86,9 +87,17 @@ const Cart = () => {
       <div className="w-full mx-auto px-4 flex flex-col items-start justify-start">
       <h1 className="text-2xl font-bold my-4 mx-4">My Cart</h1>
       {cartItems.length === 0 ? (
-        <div className="min-h-full py-24">
-           <p className="text-2xl text-center font-bold ">You don't have any item in your cart at the moment.</p>
+        <div className="flex flex-col gap-8 items-between justify-center lg:flex-row w-full my-4">
+  <div className="flex flex-col items-center justify-center gap-4 py-20 w-[95%] mx-auto max-h-[118px] lg:h-[325px] max-w-[840px">
+           <p className="text-xl text-center font-semibold ">Your cart is empty. Start shopping.</p>
+  
+        <NavLink to={`/#store`}>        <Button   className="bg-primary  text-xl font-bold rounded-3xl hover:text-background hover:bg-destructive">Buy Now</Button>
+        </NavLink>
         </div>
+        <OrderSummary total={calculateTotal()}
+      cta="Proceed To Payment" 
+      onButtonClick={() => navigate('/checkout')}/>        </div>
+      
        
       ) : (
         <>  

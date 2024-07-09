@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Product from '@/components/Product'
@@ -15,6 +15,10 @@ import one2 from '../assets/products/desktop9.webp'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import Footer from '@/components/Footer'
+import { Link, animateScroll as scroll, } from 'react-scroll'
+import { useLocation } from 'react-router-dom'
+
+
 
 
 const products = [
@@ -84,7 +88,17 @@ const products = [
 const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
+  const location = useLocation();
+
   
+useEffect(() => {
+  if (location.hash) {
+    const element = document.getElementById(location.hash.replace("#", ""))
+    if (element) {
+      element.scrollIntoView({behavior: "smooth"});
+    }
+  }
+}, [location]);
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
@@ -97,7 +111,14 @@ const Home = () => {
       <motion.h1 whileInView={{scale:1}} initial={{scale:.8}} className='pt-16 text-4xl md:text-5xl font-black text-background opacity-90'>Autumn Collection</motion.h1>
       <div className="flex flex-col gap-2 justify-start items-start md:flex-row md:justify-between md:items-center md:w-[95%]">
         <p className="text-[16px] md:text-xl font-normal text-background">Get the latest tech products at CRAZY discount prices.</p>
-        <Button className="text-xl font-bold rounded-3xl hover:text-background hover:bg-destructive">Buy Now</Button>
+        <Link 
+        to="store"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+        >  <Button   className="text-xl font-bold rounded-3xl hover:text-background hover:bg-destructive">Buy Now</Button></Link>
+      
       </div>
 
       </div>
@@ -110,7 +131,7 @@ const Home = () => {
       <p className=' text-lg font-normal text-destructive'>From the best stores and offers</p>
        </div>
       <div className="">
-      <div className=" my-8 flex flex-col items-center justify-center gap-8 md:gap-4 md:flex-row md:justify-between md:items-center flex-wrap">
+      <div id='store' className=" my-8 flex flex-col items-center justify-center gap-8 md:gap-4 md:flex-row md:justify-between md:items-center flex-wrap">
         {products.map((product) => (
           <Product key={product.id} product={product} onClick={handleProductClick} />
         ))}
@@ -123,7 +144,13 @@ const Home = () => {
       <motion.h1 whileInView={{scale:1}} initial={{scale:.8}} className='pt-16 text-4xl md:text-5xl font-black text-background opacity-90'>Get Custom setup</motion.h1>
       <div className="flex flex-col gap-2 justify-start items-start md:flex-row md:justify-between md:items-center md:w-[95%]">
         <p className="text-[16px] md:text-xl font-normal text-background">Talk to our team to customize your new workspace.</p>
-        <Button className="text-xl font-bold rounded-3xl hover:text-background hover:bg-destructive">Buy Now</Button>
+        <Link 
+        to="store"
+        spy={true}
+        smooth={true}
+        duration={500}
+        >  <Button   className="text-xl font-bold rounded-3xl hover:text-background hover:bg-destructive">Buy Now</Button></Link>
+
       </div>
 
       </div>
@@ -133,7 +160,13 @@ const Home = () => {
       <motion.h1 whileInView={{scale:1}} initial={{scale:.8}} className='pt-16 text-4xl md:text-5xl font-black text-background opacity-90'>Get Custom setup</motion.h1>
       <div className="flex flex-col gap-2 justify-start items-start md:flex-row md:justify-between md:items-center md:w-[95%]">
         <p className="text-[16px] md:text-xl font-normal text-background">Talk to our team to customize your new workspace.</p>
-        <Button className="text-xl font-bold rounded-3xl hover:text-background hover:bg-destructive">Buy Now</Button>
+        <Link 
+        to="store"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        >  <Button   className="text-xl font-bold rounded-3xl hover:text-background hover:bg-destructive">Buy Now</Button></Link>
       </div>
 
       </div>

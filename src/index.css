@@ -3,7 +3,11 @@
 
 /* Apply the font globally */
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Nunito Sans', sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 @tailwind base;

@@ -29,7 +29,8 @@ const products = [
   {
     id: 2,
     image1: two,
-    image2: '/src/assests/products/desktop.webp',
+    image2: one1,
+    image3: one2,
 
     name: 'Dell UltraSharp 38" 1600p Curved Monitor',
     description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
@@ -39,7 +40,9 @@ const products = [
   {
     id: 3,
     image1: three,
-    image2: '/src/assests/products/desktop.webp',
+    image2: one1,
+    image3: one2,
+
 
     name: 'Apple 24" iMac with M3 Chip (Silver)',
     description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
@@ -49,7 +52,8 @@ const products = [
   {
     id: 4,
     image1: four,
-    image2: '/src/assests/products/desktop.webp',
+    image2: one1,
+    image3: one2,
 
     name: 'Apple Mac mini (M2 Pro)',
     description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
@@ -69,7 +73,7 @@ const products = [
   {
     id: 6,
     image1: six,
-    image2: '/src/assests/products/desktop.webp',
+    image2: one1,
 
     name: 'Apple 16" MacBook Pro (M3 Pro, Space Black)',
     description: 'The Midnight Apple 13" MacBook Air now features the Apple M3 chip, which has many improvements over its predecessor, the M2. Now built on 3nm process technology, the M3 8-Core Chip is combined with a 10-Core GPU. The next-gen GPU features Dynamic Caching, hardware-accelerated ray tracing, and mesh shading, all of which significantly increase performance for the most demanding creative apps and games. The M3 Chip also has a 16-Core Neural Engine that can leverage the power of AI for both macOS and a growing number of supported apps. It also has 16GB of unified RAM and a 512GB SSD. Add Wi-Fi 6E (802.11ax) and support for two external displays, and this MacBook Air delivers performance, power efficiency, and portability',
@@ -100,7 +104,14 @@ const ProductDetails = () => {
       localStorage.setItem('cartItems', JSON.stringify([...savedCartItems, { ...product, quantity: 1 }]));
     }
     console.log("Cart items:", JSON.parse(localStorage.getItem('cartItems')));
+      const buttonContent = document.getElementById("addToCart");
+          buttonContent.textContent = "Added to cart";
+
+
   };
+    
+
+
 
   return (
     <div className='mt-16'>
@@ -116,7 +127,7 @@ const ProductDetails = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4 justify-start items-col w-[95%] mx-auto lg:w-1/2">
-            <h1 className="text-4xl text-left text-foreground font-bold md:text-5xl">{product.name}</h1>
+            <h1 className="text-4xl text-left text-foreground font-bold">{product.name}</h1>
             <p className="text-destructive text-sm font-normal">{product.description}</p>
             <p className="font-bold text-sm underline">Read More</p>
             <div className="flex justify-start items-start md:items-center gap-6 text-xl text-foreground font-bold w-full flex-col md:flex-row">
@@ -134,11 +145,11 @@ const ProductDetails = () => {
             </div>
             <p className="text-[28px] text-foreground font-bold">{product.price}</p>
             <div className="flex justify-between gap-4 w-full">
-              <Button className="bg-primary rounded-3xl w-[335px] text-center py-6 text-xl font-bold hover:bg-destructive hover:text-background" onClick={handleAddToCart}>Add To Cart</Button>
+              <Button id="addToCart" className="bg-primary rounded-3xl w-[335px] text-center py-6 text-xl font-bold hover:bg-destructive hover:text-background" onClick={handleAddToCart}>Add To Cart</Button>
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 items-start justify-center my-4">
+        <div className="flex flex-col gap-2 items-start justify-center my-4 px-6">
           <h3 className="font-bold text-3xl">Key Features</h3>
           <li>Apple M3 8-Core Chip</li>
           <li>16GB Unified RAM | 512GB SSD</li>

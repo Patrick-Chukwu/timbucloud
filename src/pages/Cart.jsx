@@ -97,8 +97,7 @@ const Cart = () => {
         </div>
         <OrderSummary total={calculateTotal()}
       cta="Proceed To Payment" 
-      onButtonClick=""
-      disabled
+      onButtonClick={() => navigate('/checkout')}
       />        </div>
       
        

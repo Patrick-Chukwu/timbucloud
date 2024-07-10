@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import card from '../assets/card.svg'
 const CheckoutOrder = ({ total, cta, onButtonClick }) => {
   const [formData, setFormData] = useState({
     cardNumber: '',
@@ -42,7 +42,7 @@ const CheckoutOrder = ({ total, cta, onButtonClick }) => {
         <div className="p-4 mb-4 rounded    max-w-full ">
           <h2 className="text-xl font-bold mb-4">Your Card Details</h2>
           <div className="flex flex-col gap-2 ">
-            <div className="flex flex-col gap-2 items-start justify-center">
+            <div className=" relative flex flex-col gap-2 items-start justify-center">
               <label htmlFor="cardNumber">Card Number</label>
               <input
                 type="text"
@@ -50,9 +50,10 @@ const CheckoutOrder = ({ total, cta, onButtonClick }) => {
                 id="cardNumber"
                 value={formData.cardNumber}
                 onChange={handleChange}
-                className="p-2 border rounded mb-4 w-full"
+                className="p-2 border rounded mb-4 w-full relative"
                 required
               />
+              <img src={card} alt=""className='absolute right-4 bottom-6' />
             </div>
             <div className="flex flex-col gap-2 items-start justify-center">
               <label htmlFor="cardExpiration">Expiration (MM/YY)</label>

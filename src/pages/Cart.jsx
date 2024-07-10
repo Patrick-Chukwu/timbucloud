@@ -1,4 +1,3 @@
-// Cart.jsx
 import React, { useState, useEffect } from 'react';
 import CartItem from '../components/CartItem';
 import OrderSummary from '../components/OrderSummary';

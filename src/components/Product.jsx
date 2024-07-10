@@ -1,4 +1,3 @@
-// Product.jsx
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';

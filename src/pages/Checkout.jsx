@@ -149,9 +149,7 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-2 items-center justify-center max-w-full self-start">
             <CheckoutOrder total={total} cta="Place Order" onButtonClick={handleButtonClick} />
-          </div>
         </form>
       </div>
       <Footer />

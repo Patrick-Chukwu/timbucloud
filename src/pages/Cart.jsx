@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CartItem from '../components/CartItem';
 import OrderSummary from '../components/OrderSummary';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -10,8 +9,7 @@ const Cart = ({ cartItems, handleQuantityChange, handleRemoveItem, calculateTota
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen mt-16">
-      {/* <Navbar /> */}
+    <div className=" mt-[80px]">
       <div className="w-full mx-auto px-4 flex flex-col items-start justify-start">
         <h1 className="text-2xl font-bold my-4 mx-4">My Cart</h1>
         <p className='mb-4 mx-4 text-xl font-semibold'>Total Items ({cartItems.length})</p>
@@ -43,7 +41,6 @@ const Cart = ({ cartItems, handleQuantityChange, handleRemoveItem, calculateTota
           </>
         )}
       </div>
-      <Footer />
     </div>
   );
 };

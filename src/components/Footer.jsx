@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='bg-primary w-full py-4'>
+    <div className='bg-primary min-w-full py-4'>
       <div className="mx-auto w-[95%]">
       <div className="flex flex-col gap-4 py-6 w-full border-b">
         <Link to="/">    <img src={logo} alt="Timbucloud logo" className='w-[328.28px] h-7 md:w-[328.85px]'/>

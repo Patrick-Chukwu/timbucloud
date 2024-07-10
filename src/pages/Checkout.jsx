@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import OrderSummary from '@/components/OrderSummary';
 import CheckoutOrder from '@/components/CheckoutOrder';
 
 const Checkout = () => {
@@ -152,7 +149,6 @@ const Checkout = () => {
             <CheckoutOrder total={total} cta="Place Order" onButtonClick={handleButtonClick} />
         </form>
       </div>
-      <Footer />
     </div>
   );
 };

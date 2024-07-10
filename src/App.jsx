@@ -13,6 +13,7 @@ import one1 from './assets/products/desktop10.webp'
 import one2 from './assets/products/desktop9.webp'
 import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const App = () => {
 
@@ -130,6 +131,7 @@ const App = () => {
         <Route path='/product/:productId' element={<ProductDetails  addToCart={addToCart}/>} />
         <Route path='/cart' element={<Cart  cartItems={cartItems} handleQuantityChange={handleQuantityChange} handleRemoveItem={handleRemoveItem} calculateTotal={calculateTotal}/>} />
       </Routes>
+      <Footer/>
     </div>
   )
 }

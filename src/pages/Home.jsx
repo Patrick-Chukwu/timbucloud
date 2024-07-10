@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import { motion } from 'framer-motion'
-// import Navbar from '@/components/Navbar'
 import Product from '@/components/Product'
 import one from '../assets/products/desktop.webp'
 import two from '../assets/products/desktop2.webp'
@@ -13,8 +12,6 @@ import one1 from '../assets/products/desktop10.webp'
 import one2 from '../assets/products/desktop9.webp'
 
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
-import Footer from '@/components/Footer'
 import { Link, animateScroll as scroll, } from 'react-scroll'
 import { useLocation } from 'react-router-dom'
 
@@ -195,9 +192,6 @@ useEffect(() => {
        
       </section>
       </main>
-      <footer>
-        <Footer/>
-      </footer>
     </div>
   )
 }

@@ -9,9 +9,6 @@ import five from '../assets/products/desktop5.webp';
 import six from '../assets/products/desktop6.webp';
 import one1 from '../assets/products/desktop10.webp';
 import one2 from '../assets/products/desktop9.webp';
-
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -110,7 +107,7 @@ const ProductDetails = ({ addToCart }) => {
 
 
   return (
-    <div className='mt-20'>
+    <div className='mt-28 mb-20'>
       <div className="w-[95%] mx-auto md:px-4">
         <div className="flex gap-8 items-center justify-between my-8 flex-col lg:flex-row">
           <div className="flex flex-col gap-4 items-center justify-center h-[516px] w-[522px] max-w-[95%] shrink">
@@ -167,7 +164,6 @@ const ProductDetails = ({ addToCart }) => {
           <li>10-Core GPU | 16-Core Neural Engine</li>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

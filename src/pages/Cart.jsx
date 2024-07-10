@@ -96,7 +96,7 @@ const Cart = ({ cartItems, handleQuantityChange, handleRemoveItem, calculateTota
           </div>
         ) : (
           <div className="flex flex-col gap-4 items-start lg:flex-row w-full">
-            <div className="flex flex-col gap-2 my-4 mx-auto max-w-full">
+            <div className="flex flex-col gap-8 my-4 mx-auto max-w-full">
               {cartItems.map((product) => (
                 <CartItem
                   key={product.id}

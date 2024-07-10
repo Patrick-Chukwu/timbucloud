@@ -14,6 +14,7 @@ import one2 from './assets/products/desktop9.webp'
 import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import CartItem from './components/CartItem'
 
 const App = () => {
 
@@ -130,6 +131,7 @@ const App = () => {
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/product/:productId' element={<ProductDetails  addToCart={addToCart}/>} />
         <Route path='/cart' element={<Cart  cartItems={cartItems} handleQuantityChange={handleQuantityChange} handleRemoveItem={handleRemoveItem} calculateTotal={calculateTotal}/>} />
+        <Route path='/cartitem' element={<CartItem/>}/>
       </Routes>
       <Footer/>
     </div>

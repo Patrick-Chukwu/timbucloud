@@ -1,25 +1,28 @@
 import React from 'react';
 
-const CartItem = ({ item, onQuantityChange, onRemove }) => {
+const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
   return (
-    <div className="mx-auto flex flex-col md:flex-row items-start  md:items-center justify-between px-4 py-4 rounded-[20px] w-[335px] md:w-[584px] lg:[820px] shadow-lg">
-      <img src={item.image} alt={item.name} className="w-72 h-32 object-contain rounded" />
-      <div className="flex-1 ml-4">
-        <div className="flex gap-2 justify-between items-start">        <h2 className="text-xl font-bold">{item.name}</h2>
-        <button onClick={() => onRemove(item.id)} className="text-red-500 text-sm font-bold w-fit">Remove</button>
-
-        </div>
-        <p className="text-gray-500">{item.code} • {item.mfr}</p>
-        <div className="flex items-center justify-between gap-2 px-4 mt-2 bg-gray-200 max-w-[184px] rounded-3xl">
-          <button onClick={() => onQuantityChange(item.id, -1)}
-          disabled={item.quantity === 1}
-          className=" p-2 rounded">-</button>
-          <span className="mx-2">{item.quantity}</span>
-          <button onClick={() => onQuantityChange(item.id, 1)} className=" p-2 rounded">+</button>
-        </div>
-        <p className="text-lg font-bold">${item.price.toFixed(2)}</p>
-
+    <div className="flex flex-col md:flex-row items-center justify-center bg-white lg:w-[800px] min-w-[60%]">
+        <img src={item.image1} alt={item.name} className="w-[250px] h-40 object-contain rounded-lg" />
+      <div className="flex items-start flex-col">
+        
+      <div className="flex gap-2 items-center justify-center">
+          <h4 className="text-xl font-bold max-w-[455px]">{item.name}</h4>
+          <button onClick={() => onRemove(item.id)} className="text-red-500 ml-4">Remove</button>
+          </div>
+          <p className="text-[16px] font-normal">{item.tag}</p>
+        <div className="flex items-center gap-4">
+        <div className="flex text-[16px] font-bold items-center bg-[#EEEEEE] rounded-lg">
+        <button onClick={() => onDecrease(item.id)} className=" px-2 py-1 rounded hover:bg-[#D9D9D9] cursor-pointer">-</button>
+        <span className="mx-2">{item.quantity}</span>
+        <button onClick={() => onIncrease(item.id)} className=" px-2 py-1 rounded hover:bg-[#D9D9D9] cursor-pointer">+</button>
+   
       </div>
+      <p className="text-lg font-bold mt-2">${item.price}</p>
+         
+        </div>
+      </div>
+    
 
     </div>
   );

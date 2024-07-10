@@ -59,7 +59,7 @@ const Checkout = () => {
                     id="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="p-2 border rounded w-full"
+                    className="p-2 border rounded w-full border-[#D9D9D9]"
                     required
                   />
                 </div>
@@ -71,7 +71,7 @@ const Checkout = () => {
                     id="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="p-2 border rounded w-full"
+                    className="p-2 border rounded w-full border-[#D9D9D9]"
                     required
                   />
                 </div>
@@ -84,7 +84,7 @@ const Checkout = () => {
                   id="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleChange}
-                  className="p-2 border rounded w-full"
+                  className="p-2 border rounded w-full border-[#D9D9D9]"
                   required
                 />
               </div>
@@ -96,7 +96,7 @@ const Checkout = () => {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="p-2 border rounded w-full"
+                  className="p-2 border rounded w-full border-[#D9D9D9]"
                   required
                 />
               </div>
@@ -108,7 +108,7 @@ const Checkout = () => {
                   id="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
-                  className="p-2 border rounded w-full"
+                  className="p-2 border rounded w-full border-[#D9D9D9]"
                 />
               </div>
               <div className="flex flex-col gap-2 items-start justify-center">
@@ -119,7 +119,7 @@ const Checkout = () => {
                   id="streetAddress"
                   value={formData.streetAddress}
                   onChange={handleChange}
-                  className="p-2 border rounded w-full"
+                  className="p-2 border rounded w-full border-[#D9D9D9]"
                   required
                 />
               </div>
@@ -131,7 +131,7 @@ const Checkout = () => {
                   id="city"
                   value={formData.city}
                   onChange={handleChange}
-                  className="p-2 border rounded w-full"
+                  className="p-2 border rounded w-full border-[#D9D9D9]"
                   required
                 />
               </div>
@@ -143,7 +143,7 @@ const Checkout = () => {
                   id="postcode"
                   value={formData.postcode}
                   onChange={handleChange}
-                  className="p-2 border rounded w-full"
+                  className="p-2 border rounded w-full border-[#D9D9D9]"
                   required
                 />
               </div>

@@ -50,7 +50,7 @@ const CheckoutOrder = ({ total, cta, onButtonClick }) => {
                 id="cardNumber"
                 value={formData.cardNumber}
                 onChange={handleChange}
-                className="p-2 border rounded mb-4 w-full relative"
+                className="p-2 border border-[#D9D9D9] rounded mb-4 w-full relative"
                 required
               />
               <img src={card} alt=""className='absolute right-4 bottom-6' />
@@ -63,7 +63,7 @@ const CheckoutOrder = ({ total, cta, onButtonClick }) => {
                 id="cardExpiration"
                 value={formData.cardExpiration}
                 onChange={handleChange}
-                className="p-2 border rounded w-full"
+                className="p-2 border border-[#D9D9D9] rounded w-full"
                 required
               />
             </div>
@@ -75,7 +75,7 @@ const CheckoutOrder = ({ total, cta, onButtonClick }) => {
                 id="cardSecurityCode"
                 value={formData.cardSecurityCode}
                 onChange={handleChange}
-                className="p-2 border rounded w-full"
+                className="p-2 border rounded w-full border-[#D9D9D9]"
                 required
               />
             </div>

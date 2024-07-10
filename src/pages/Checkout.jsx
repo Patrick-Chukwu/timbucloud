@@ -45,8 +45,8 @@ const Checkout = () => {
     <div className="mt-16">
       <div className="w-[98%] mx-auto p-4">
         <h1 className="text-5xl font-bold mb-4">Checkout</h1>
-        <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center lg:flex-row w-full lg:items-start lg:justify-between">
-          <div className="bg-white p-4 mb-4 rounded shadow-lg w-full lg:w-[840px] lg:h-[730px]">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center lg:flex-row max-w-full lg:items-start lg:justify-between  gap-8 ">
+          <div className="bg-white p-4 mb-4 rounded shadow-lg w-full lg:h-[730px]  lg:min-w-[840px]">
             <div className="grid grid-cols-1 gap-2 text-[16px] cursor-pointer font-normal">
               <h2 className="text-[28px] font-bold py-4">Personal Details</h2>
 

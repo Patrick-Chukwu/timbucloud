@@ -32,16 +32,16 @@ const CheckoutOrder = ({ total, cta, onButtonClick }) => {
   };
 
   return (
-    <div className="bg-white max-w-[400px] w-full mx-auto p-4 my-4 md:min-w-[664px] rounded-3xl shadow-lg text-foreground text-[16px]">
+    <div className="bg-white w-[400px] max-w-full mx-auto p-4 my-4 md:w-[664px] lg rounded-3xl shadow-lg text-foreground text-[16px] ">
       <h2 className="text-[28px] font-bold mb-4">Order Summary</h2>
       <p className="flex justify-between pb-4"><span>Subtotal:</span><span className='font-semibold'>${total.toFixed(2)}</span></p>
       <p className="flex justify-between border-b pb-4 border-[#D9D9D9]"><span>Duties & Taxes:</span><span className='font-semibold'>Due Upon Delivery</span></p>
       <p className="flex justify-between text-2xl border-b pb-4 border-[#D9D9D9] mt-4"><span>Total:</span><span className='font-bold'>${total.toFixed(2)}</span></p>
 
       <form onSubmit={handleSubmit}>
-        <div className="p-4 mb-4 rounded w-full">
+        <div className="p-4 mb-4 rounded    max-w-full ">
           <h2 className="text-xl font-bold mb-4">Your Card Details</h2>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 ">
             <div className="flex flex-col gap-2 items-start justify-center">
               <label htmlFor="cardNumber">Card Number</label>
               <input

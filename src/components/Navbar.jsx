@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from 'react';
+// Navbar.jsx
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '/logo.svg';
 import cart from '../assets/cart.svg';
 
-const Navbar = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const savedCartItems = localStorage.getItem('cartItems');
-    if (savedCartItems) {
-      setCartItems(JSON.parse(savedCartItems));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  }, [cartItems]);
-
+const Navbar = ({ cartItems }) => {
   return (
-    <nav className="bg-primary w-full px-2 py-3 fixed top-0 z-">
+    <nav className="bg-primary w-full px-2 py-3 fixed top-0 z-10">
       <div className="flex-1 flex-wrap max-w-full flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex w-full sm:py-2">
           <div className="flex justify-between items-center w-full flex-1">

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { motion } from 'framer-motion'
-import Navbar from '@/components/Navbar'
+// import Navbar from '@/components/Navbar'
 import Product from '@/components/Product'
 import one from '../assets/products/desktop.webp'
 import two from '../assets/products/desktop2.webp'
@@ -105,7 +105,6 @@ useEffect(() => {
   };
   return (
     <div className='mt-28'>
-      <Navbar/>
       <header className="my-12 w-[95%] max-w-[1280px] mx-auto   bg-cover bg-center rounded-3xl " style={{backgroundImage: "url('/hero.webp')"}}>
       <div className="p-8 h-[321px] md:h-[396px] lg:h-[400px] gradient w-full rounded-3xl  my-4  flex flex-col items-start justify-end gap-2 ">
       <motion.h1 whileInView={{scale:1}} initial={{scale:.8}} className='pt-16 text-4xl md:text-5xl font-black text-background opacity-90'>Autumn Collection</motion.h1>

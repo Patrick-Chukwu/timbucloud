@@ -1,42 +1,20 @@
+// Product.jsx
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   const navigate = useNavigate();
   const [buttonText, setButtonText] = useState('Add To Cart');
-  const [cartItemCount, setCartItemCount] = useState(0); // State to track cart items count
-  // <p className="text-sm font-bold text-foreground">Items in Cart: {cartItemCount}</p>
-  useEffect(() => {
-    // Update cart items count when component mounts or cartItems change
-    const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    setCartItemCount(savedCartItems.length);
-  }, []);
 
   const handleAddToCart = () => {
-    setButtonText('Added to Cart'); // Update button text
-    const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const existingItem = savedCartItems.find((item) => item.id === product.id);
-
-    if (existingItem) {
-      const updatedCartItems = savedCartItems.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-    } else {
-      localStorage.setItem('cartItems', JSON.stringify([...savedCartItems, { ...product, quantity: 1 }]));
-    }
-
-    setCartItemCount(savedCartItems.length + 1); // Update cart items count
+    setButtonText('Added to Cart');
+    addToCart(product);
   };
 
   const handleClick = () => {
     navigate(`/product/${product.id}`);
-  };
-
-  const handleCart = () => {
-    navigate('/cart');
   };
 
   return (
@@ -65,7 +43,6 @@ const Product = ({ product }) => {
           {buttonText}
         </Button>
       </div>
-    
     </motion.div>
   );
 };

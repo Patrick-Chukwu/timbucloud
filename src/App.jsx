@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Checkout from './pages/Checkout'
@@ -12,6 +12,7 @@ import six from './assets/products/desktop6.webp'
 import one1 from './assets/products/desktop10.webp'
 import one2 from './assets/products/desktop9.webp'
 import Cart from './pages/Cart'
+import Navbar from './components/Navbar'
 
 const App = () => {
 
@@ -79,13 +80,55 @@ const App = () => {
     }
   ]
 
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const savedCartItems = localStorage.getItem('cartItems');
+    if (savedCartItems) {
+      setCartItems(JSON.parse(savedCartItems));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const addToCart = (product) => {
+    const existingItem = cartItems.find((item) => item.id === product.id);
+    if (existingItem) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  };
+
+  const handleQuantityChange = (id, amount) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + amount } : item
+      )
+    );
+  };
+
+  const handleRemoveItem = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
+  const calculateTotal = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
   return (
     <div className='text-foreground'>
+      <Navbar cartItems={cartItems}/>
       <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<Home addToCart={addToCart}/>} />
         <Route path='/checkout' element={<Checkout/>} />
-        <Route path='/product/:productId' element={<ProductDetails/>} />
-        <Route path='/cart' element={<Cart/>} />
+        <Route path='/product/:productId' element={<ProductDetails  addToCart={addToCart}/>} />
+        <Route path='/cart' element={<Cart  cartItems={cartItems} handleQuantityChange={handleQuantityChange} handleRemoveItem={handleRemoveItem} calculateTotal={calculateTotal}/>} />
       </Routes>
     </div>
   )

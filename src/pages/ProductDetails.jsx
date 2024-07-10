@@ -78,7 +78,7 @@ const products = [
   }
 ];
 
-const ProductDetails = () => {
+const ProductDetails = ({ addToCart }) => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const product = products.find((p) => p.id === parseInt(productId));
@@ -90,19 +90,7 @@ const ProductDetails = () => {
   }
 
   const handleAddToCart = () => {
-    console.log("Adding item to cart:", product.name);
-    const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const existingItem = savedCartItems.find((item) => item.id === product.id);
-
-    if (existingItem) {
-      const updatedCartItems = savedCartItems.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-    } else {
-      localStorage.setItem('cartItems', JSON.stringify([...savedCartItems, { ...product, quantity: 1 }]));
-    }
-    console.log("Cart items:", JSON.parse(localStorage.getItem('cartItems')));
+    addToCart(product);
     const buttonContent = document.getElementById("addToCart");
     buttonContent.textContent = "Added to cart";
   };
@@ -111,9 +99,38 @@ const ProductDetails = () => {
     setSelectedImage(image);
   };
 
+ 
+
+
+
+  if (!product) {
+    return <div>Please select a product.</div>;
+  }
+
+  // const handleAddToCart = () => {
+  //   console.log("Adding item to cart:", product.name);
+  //   const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  //   const existingItem = savedCartItems.find((item) => item.id === product.id);
+
+  //   if (existingItem) {
+  //     const updatedCartItems = savedCartItems.map((item) =>
+  //       item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+  //     );
+  //     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  //   } else {
+  //     localStorage.setItem('cartItems', JSON.stringify([...savedCartItems, { ...product, quantity: 1 }]));
+  //   }
+  //   console.log("Cart items:", JSON.parse(localStorage.getItem('cartItems')));
+  //   const buttonContent = document.getElementById("addToCart");
+  //   buttonContent.textContent = "Added to cart";
+  // };
+
+  // const handleImageClick = (image) => {
+  //   setSelectedImage(image);
+  // };
+
   return (
     <div className='mt-16'>
-      <Navbar />
       <div className="w-[95%] mx-auto md:px-4">
         <div className="flex gap-8 items-center justify-between my-8 flex-col lg:flex-row">
           <div className="flex flex-col gap-4 items-center justify-center h-[516px] w-[522px] max-w-[95%] shrink">

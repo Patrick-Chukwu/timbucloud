@@ -127,7 +127,7 @@ useEffect(() => {
       <p className=' text-[16px] font-normal text-destructive'>From the best stores and offers</p>
        </div>
       <div className="">
-      <div id='store' className="my-8 flex flex-col items-center justify-center gap-8 md:gap-2 md:flex-row md:justify-center md:items-center flex-wrap">
+      <div id='store' className="my-8 flex flex-col items-center justify-center gap-8 md:gap-4 md:flex-row md:justify-center md:items-center flex-wrap">
         {products.map((product) => (
           <Product key={product.id} product={product} id="addToCart" onClick={handleProductClick} />
         ))}

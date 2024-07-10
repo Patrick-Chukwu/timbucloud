@@ -18,7 +18,7 @@ const Product = ({ product, addToCart }) => {
 
   return (
     <motion.div
-      className="cursor-pointer flex flex-col gap-2 items-start justify-center bg-background shadow-lg rounded-[14px] lg:rounded-[20px] px-4 py-8 h-[480px] md:w-[335px] lg:min-w-[400px] hover:shadow-xl"
+      className="cursor-pointer flex flex-col gap-2 max-w-[98%] items-center justify-center bg-background shadow-lg rounded-[14px] lg:rounded-[20px] px-4 py-8 h-[450px] md:min-w-[312px] md:w-[45%] lg:w-[32%] w-[400px] hover:shadow-xl"
     >
       <img
         src={product.image1}
@@ -26,6 +26,7 @@ const Product = ({ product, addToCart }) => {
         onClick={handleClick}
         className="w-[311px] md:w-[288px] xl:w-[376px] h-[250px] object-contain rounded-3xl"
       />
+      <div className="flex-col flex gap-1 justify-between  h-40">
       <h2
         className="text-xl font-bold text-foreground w-full text-left"
         onClick={handleClick}
@@ -42,6 +43,8 @@ const Product = ({ product, addToCart }) => {
           {buttonText}
         </Button>
       </div>
+      </div>
+     
     </motion.div>
   );
 };

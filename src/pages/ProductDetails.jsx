@@ -135,7 +135,7 @@ const ProductDetails = ({ addToCart }) => {
             </div>
           </div>
           <div className="flex flex-col gap-4 justify-start items-col w-[95%] mx-auto lg:w-1/2">
-            <h1 className="text-4xl text-left text-foreground font-bold">{product.name}</h1>
+          <h1 className="text-4xl text-left text-foreground font-bold">{product.name}</h1>
             <p className="text-destructive text-sm font-normal">{product.description}</p>
             <p className="font-bold text-sm underline">Read More</p>
             <div className="flex justify-start items-start md:items-center gap-6 text-xl text-foreground font-bold w-full flex-col md:flex-row">

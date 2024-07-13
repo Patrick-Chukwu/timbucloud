@@ -90,6 +90,7 @@ const ProductDetails = ({ addToCart }) => {
     addToCart(product);
     const buttonContent = document.getElementById("addToCart");
     buttonContent.textContent = "Added to cart";
+    console.log(product.price)
   };
 
   const handleImageClick = (image) => {

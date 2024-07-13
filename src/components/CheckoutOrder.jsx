@@ -10,7 +10,7 @@ const CheckoutOrder = ({ total, cta, onButtonClick }) => {
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const calculatedTotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const calculatedTotal = cartItems.reduce((acc, item) =>  item.price * item.quantity, 0);
     if (typeof total !== 'function') {
       console.warn("Expected 'total' to be a function");
     } else {

@@ -22,16 +22,16 @@ const Products = () => {
     <div className='mt-24'>
 
         <h2>Fetched responses</h2>
-        <div className="flex gap-2">
+        <div className="flex gap-2 max-w-[98%] mx-auto px-4">
             {products.map(product => (
-                <div key={product.unique_id} className="flex flex-col gap-4">
+                <div key={product.unique_id} className="flex flex-col gap-4 border w-[600px] mx-auto">
                     <h2>{product.name}</h2>
                     {product.photos.length > 0 && (
                         <img src={`https://api.timbu.cloud/${product.photos[0].url}`} alt={product.name} 
                         onError={(e) => { e.target.onerror = null; e.target.src="" }}
-                        />
+                        className='size-5'/>
                     )}
-                <p>     {`https://api.timbu.cloud/${product.photos[0].url}`}</p>
+                <p className='max-w-[350px] px-4 border mx-auto py-4'>     {`https://api.timbu.cloud/${product.photos[0].url}`}</p>
                 </div>
             ))}
         </div>

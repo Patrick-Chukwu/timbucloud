@@ -15,6 +15,7 @@ import Cart from './pages/Cart'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CartItem from './components/CartItem'
+import Products from './pages/Products'
 
 const App = () => {
 
@@ -132,6 +133,7 @@ const App = () => {
         <Route path='/product/:productId' element={<ProductDetails  addToCart={addToCart}/>} />
         <Route path='/cart' element={<Cart  cartItems={cartItems} handleQuantityChange={handleQuantityChange} handleRemoveItem={handleRemoveItem} calculateTotal={calculateTotal}/>} />
         <Route path='/cartitem' element={<CartItem/>}/>
+        <Route path='/products' element={<Products/>}/>
       </Routes>
       <Footer/>
     </div>

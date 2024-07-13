@@ -18,7 +18,7 @@ const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
         <button onClick={() => onIncrease(item.id)} className=" px-4 py-1 rounded hover:bg-[#D9D9D9] cursor-pointer">+</button>
    
       </div>
-      <p className="text-lg font-bold mt-2">${item.price}</p>
+      <p className="text-lg font-bold mt-2">{item.price}</p>
          
         </div>
       </div>

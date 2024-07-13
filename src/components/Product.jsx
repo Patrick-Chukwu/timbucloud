@@ -18,7 +18,7 @@ const Product = ({ product, addToCart }) => {
 
   return (
     <motion.div
-      className="cursor-pointer flex flex-col gap-2 max-w-[98%] items-center justify-center bg-background shadow-lg rounded-[14px] lg:rounded-[20px] px-4 py-8 h-[450px] md:min-w-[312px] md:w-[45%] lg:w-[32%] w-[400px] hover:shadow-xl"
+      className="cursor-pointer flex flex-col gap-2 max-w-[] items-center justify-center bg-background shadow-lg rounded-[14px] lg:rounded-[20px] px-4 py-8 h-[450px] md:min-w-[312px] md:w-[45%] lg:w-[32%] w-[400px] hover:shadow-xl"
     >
       <img
         src={product.image1}

@@ -44,11 +44,11 @@ const Products = () => {
                                     className='w-full h-auto object-cover'
                                 />
                             )}
-                            {product.photos && product.photos.length > 0 && (
+                            {/* {product.photos && product.photos.length > 0 && (
                                 <p className='text-sm text-gray-500'>
-                                    {`https://api.timbu.cloud/${product.photos[0].url}`}
+                                    {`${product.photos[0].url}`}
                                 </p>
-                            )}
+                            )} */}
                               <p className="text-foreground text-2xl font-bold">{product.price}</p>
                         </div>
                     ))}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '/logo.svg';
+import logo from '../assets/Ari.png';
 import cart from '../assets/cart.svg';
 
 const Navbar = ({ cartItems }) => {
@@ -10,7 +10,7 @@ const Navbar = ({ cartItems }) => {
         <div className="flex w-full sm:py-2">
           <div className="flex justify-between items-center w-full flex-1">
             <div className="">
-              <Link to='/'><img className='h-4 w-[189.3px] bg-primary hover:bg-background' src={logo} alt="Timbucloud logo" /></Link>
+              <Link to='/'><img className='size-12 bg-primary hover:bg-background' src={logo} alt="Timbucloud logo" /></Link>
             </div>
             <Link to='/cart' className='text-[16px] font-semibold flex justify-center items-center hover:underline gap-2 w-fit text-foreground size-8 place-items-center'>
               <img src={cart} alt="cart icon" className='' />

@@ -5,11 +5,14 @@ import { motion } from 'framer-motion';
 
 const Product = ({ product, addToCart }) => {
   const navigate = useNavigate();
-  const [buttonText, setButtonText] = useState('Add To Cart');
+  
+  const [buttonText, setButtonText] = useState('View Details');
 
   const handleAddToCart = () => {
-    setButtonText('Added to Cart');
-    addToCart(product);
+    // setButtonText('Added to Cart');
+    // addToCart(product);
+    navigate(`/product/${product.id}`);
+
   };
 
   const handleClick = () => {

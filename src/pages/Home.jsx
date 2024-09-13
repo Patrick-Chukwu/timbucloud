@@ -82,7 +82,7 @@ const products = [
   }
 ]
 
-const Home = () => {
+const Home = ({addToCart}) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const location = useLocation();

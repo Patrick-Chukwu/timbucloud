@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '/logo.svg'
+import logo from '../assets/Ari.png'
 import fb from '../assets/fb.svg'
 import x from '../assets/x.svg'
 import ig from '../assets/ig.svg'
@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <div className='bg-primary min-w-full py-4'>
       <div className="mx-auto w-[95%]">
-      <div className="flex flex-col gap-4 py-6 w-full border-b">
-        <Link to="/">    <img src={logo} alt="Timbucloud logo" className='w-[328.28px] h-7 md:w-[328.85px]'/>
+      <div className="flex flex-row gap-4 py-6 w-full border-b">
+        <Link to="/">    <img src={logo} alt="Timbucloud logo" className='size-14 md:w-[328.85px]'/>
         </Link>
     <p className="text-xl font-normal text-foreground w-[335px] md:w-[624px] lg:w-full max-w-[98%] ">Your one-stop tech shop. The biggest personal computing retailer in West Africa</p>
     </div>

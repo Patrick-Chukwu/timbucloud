@@ -38,7 +38,7 @@ const Product = ({ product, addToCart }) => {
       </h2>
       <p className="text-sm font-extrabold text-destructive">{product.tag}</p>
       <div className="flex gap-2 justify-between items-center w-full">
-        <p className="text-foreground text-2xl font-bold">{product.price}</p>
+        {/* <p className="text-foreground text-2xl font-bold">{product.price}</p> */}
         <Button
           className="text-xl bg-primary font-bold rounded-3xl hover:text-background hover:bg-destructive"
           onClick={handleAddToCart}

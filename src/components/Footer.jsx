@@ -22,7 +22,7 @@ const Footer = () => {
         </a>
         <a href="https://www.facebook.com/arinze.nwokolo.5?mibextid=ZbWKwL">        <img src={fb} alt="Facebook Icon" />
         </a>
-        <div>        <PhoneCallIcon/>: +4474609429924
+        <div className='flex'>        <PhoneCallIcon/><p className="text-lg">: +4474609429924</p>
         </div>
         
       </div>
